@@ -22,7 +22,7 @@ export function Hero() {
 	return (
 		<>
 			<div className="flex py-4 min-h-80 w-full items-center justify-center h-full  relative">
-				<div className="absolute z-[-1] flex w-full h-full items-center justify-center">
+				<div className="flex w-full h-full items-center justify-center">
 					<Canvas shadows camera={{ position: [40, 0, 60], fov: 35 }}>
 						<color attach="background" args={["#191920"]} />
 						<fog attach="fog" args={['#191920', 0, 15]} />
@@ -30,25 +30,29 @@ export function Hero() {
 					</Canvas>
 				</div>
 
-				<div className="  flex w-full justify-center gap-2 mb-2">
+				<div className="absolute inset-x-0 bottom-0 flex w-full justify-center gap-2 mb-2">
 					<Button
 						size="lg"
-						variant="outline"
+						// variant="outline"
+						className="text-blue-600 hover:text-red-600"
 						onClick={handleFirstButtonClick}
 					>
 						First Button
 					</Button>
 					<Button
 						size="sm"
-						variant="outline"
-                        className="rounded-l-lg bg-green-300"
+						// variant="outline"
+                        // className="rounded-l-lg bg-green-300 "
+						color="#fff"
+						className="text-blue-600 hover:text-red-600"
 						onClick={handleSecondButtonClick}
 					>
 						Second Button
 					</Button>
 					<Button
 						size="lg"
-						variant="outline"
+						// variant="outline"
+						className="text-blue-600 hover:text-red-600"
 						onClick={handleThirdButtonClick}
 					>
 						Third Button
@@ -56,7 +60,7 @@ export function Hero() {
 				</div>
 
 
-				<div className="flex w-1/2 items-center justify-center border-l border-gray-200 px-6 text-white-200">
+				<div className="flex w-1/2 items-center justify-center border-l border-gray-200 px-6 text-slate-400">
 					<div className="grid gap-4">
 						<h1 className="font-bold text-2xl sm:text-3xl">
 							WhimsiChair: wood in Style and Magic
