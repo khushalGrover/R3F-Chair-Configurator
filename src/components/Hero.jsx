@@ -3,12 +3,15 @@ import React, { useState } from "react";
 import Button from "./Button"; // Import your custom Button component
 import { Canvas } from "@react-three/fiber";
 import { Experience } from "./Experience";
+import { ChairDetails } from "../Constants";
+
 export function Hero() {
 	const [arg, setArg] = useState(null); // State to store the argument
 	const [isClosed, setIsClosed] = useState(false);
 	const handleFirstButtonClick = () => {
 		setArg("1");
 		console.log("First button clicked:", arg);
+		console.log("name of object is", ChairDetails[0].name);
 	};
 	const handleSecondButtonClick = () => {
 		setArg("2");
@@ -23,31 +26,29 @@ export function Hero() {
 	};
 	return (
 		<>
-			<div className="flex flex-col md:flex-row py-4 h-dvh w-full items-center justify-center relative bg-[#191920] md:bg-blue-500">
-				{/* <div
-					className={` ${
-						isClosed ? "w-full" : "w-1/2 "
-					} flex h-full bg-[#191920] items-center justify-center`}
-				> */}
-				{/* <div
-					className={`flex w-full bg-[#191920] items-center justify-center ${isClosed ? "h-full md:h-1/2" : "h-1/2 md:h-full"}`}
-				> */}
+			<div className="flex flex-col md:flex-row h-dvh w-full items-center justify-center relative bg-[#191920]">
 				<div
-					className={`${isClosed ? "w-full h-full bg-red-500 md:bg-red-300" : "w-full h-1/2 bg-blue-950 md:w-1/2 md:bg-red-900 md:h-full"}  flex  items-center justify-center`}
+					className={`${
+						isClosed
+							? "w-full h-full"
+							: "w-full h-1/2 md:w-1/2 md:h-full"
+					} relative`}
 				>
 					<Canvas shadows camera={{ position: [40, 0, 60], fov: 35 }}>
-						{/* <color attach="background" args={["#191920"]} /> */}
-						{/* <fog attach="fog" args={["#3b82f6", 0, 15]} /> */}
+						<color attach="background" args={["#191920"]} />
+						<fog attach="fog" args={["#191920", 0, 15]} />
 						<Experience arg={arg} />
 					</Canvas>
+					<div className="absolute md:right-0 md:bottom-9 right-9 bottom-0">
+						<Button
+							size="lg"
+							variant="filled"
+							onClick={handleToggleClick}
+						>
+							{isClosed ? "Show Details" : "Hide Details"}
+						</Button>
+					</div>
 				</div>
-				<Button
-					size="lg"
-					className="text-blue-600 hover:text-red-600 ml-8"
-					onClick={handleToggleClick}
-				>
-					Toggle Details
-				</Button>
 
 				<div className="absolute inset-x-0 top-0 flex w-full justify-center gap-2 mt-2">
 					<Button
@@ -76,43 +77,29 @@ export function Hero() {
 						Third Button
 					</Button>
 				</div>
-				
+
 				{isClosed ? null : (
-					<div
-						className={`${
-							isClosed ? "w-[0]" : "w-full"
-						} flex items-center justify-center px-6 text-slate-400 bg-teal-950`}
-					>
-						<div className="grid gap-4">
-							<h1 className="font-bold text-2xl sm:text-3xl">
-								WhimsiChair: wood in Style and Magic
-							</h1>
-							<div className="flex items-center gap-4">
-								<div className="flex items-center gap-0.5">
-									<StarIcon className="w-5 h-5 fill-primary" />
-									<StarIcon className="w-5 h-5 fill-primary" />
-									<StarIcon className="w-5 h-5 fill-primary" />
-									<StarIcon className="w-5 h-5 fill-muted stroke-muted-foreground" />
-									<StarIcon className="w-5 h-5 fill-muted stroke-muted-foreground" />
-									#hashTag1 #hashTag2
-								</div>
+					<div className="grid gap-4 px-6 text-slate-400">
+						<h1 className="font-bold text-2xl sm:text-3xl">
+							{ChairDetails[0].name}
+						</h1>
+						<div className="flex items-center gap-4">
+							<div className="flex items-center gap-0.5">
+								<StarIcon className="w-5 h-5 fill-white" />
+								<StarIcon className="w-5 h-5 fill-white" />
+								<StarIcon className="w-5 h-5 fill-white" />
+								<StarIcon className="w-5 h-5 stroke-muted-foreground" />
+								<StarIcon className="w-5 h-5 stroke-muted-foreground" />
+								#hashTag1 #hashTag0
 							</div>
-							<div className="grid gap-4 text-sm leading-loose">
-								<p>
-									Introducing the WhimsiChair, a delightful
-									companion for your daily woods of joy.
-								</p>
-								<p>
-									The magic truly lies in the design - a burst
-									of vibrant colors and whimsical patterns
-									that dance across the Chair's surface,
-									telling a story of wonder and creativity.
-									Every wood from the WhimsiChair is like
-									stepping into a world of imagination, where
-									the ordinary transforms into the
-									extraordinary.
-								</p>
-							</div>
+						</div>
+						<div className="grid gap-4 text-sm leading-loose">
+							<p>
+								{ChairDetails[0].heading} -{" "}
+							</p>
+							<p>
+								{ChairDetails[0].description} 
+							</p>
 						</div>
 					</div>
 				)}
