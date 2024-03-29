@@ -32,15 +32,13 @@ export function Hero() {
 						isClosed
 							? "w-full h-full"
 							: "w-full h-1/2 md:w-1/2 md:h-full"
-					} relative justify-center items-center flex`}
+					} relative`}
 				>
-					{/* <Canvas shadows camera={{ position: [40, 0, 60], fov: 35 }}>
+					<Canvas shadows camera={{ position: [40, 0, 60], fov: 35 }}>
 						<color attach="background" args={["#191920"]} />
 						<fog attach="fog" args={["#191920", 0, 15]} />
 						<Experience arg={arg} />
-					</Canvas> */}
-					<div className="text-red-600">CANVAS ELEMENT DISABLED <br />Not Support in your browser <br />T-T</div>
-					
+					</Canvas>
 					<div className="absolute md:right-0 md:bottom-9 right-9 bottom-0">
 						<Button
 							size="lg"
