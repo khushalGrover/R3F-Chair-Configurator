@@ -1,4 +1,5 @@
 import { OrbitControls, PresentationControls, Stage, MeshReflectorMaterial, useTexture } from "@react-three/drei";
+import { Chair_model } from "./Chair_model";
 export const Experience = ({ arg }) => {
 	// const props = useTexture({
 	//   map: 'PavingStones092_1K_Color.jpg',
@@ -16,14 +17,15 @@ export const Experience = ({ arg }) => {
 		<>
     		{/* <PresentationControls speed={1.5} global={false} zoom={0.8} polar={[0, Math.PI / 4]}> */}
 				<Stage environment="city" intensity={0.5} contactShadow={false}>
-					<OrbitControls makeDefault minPolarAngle={0} maxPolarAngle={Math.PI / 2} minDistance={3} />
+					<OrbitControls makeDefault minPolarAngle={0} maxPolarAngle={Math.PI / 2} minDistance={1} maxDistance={2} />
 					{/* <ambientLight intensity={0.5} /> */}
-					<mesh >
+					{/* <mesh >
 						<boxGeometry />
 						<meshStandardMaterial {...props} />
-					</mesh>
+					</mesh> */}
+					<Chair_model />
 				</Stage>
-				<mesh rotation={[-Math.PI / 2, 0, 0]} position={[0,-0.5,0]}>
+				<mesh rotation={[-Math.PI / 2, 0, 0]} position={[0,-0.4, 0]}>
 					<planeGeometry args={[100, 100]} />
 					<MeshReflectorMaterial
 						blur={[400, 400]}
