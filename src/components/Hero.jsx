@@ -4,6 +4,7 @@ import Button from "./Button"; // Import your custom Button component
 import { Canvas } from "@react-three/fiber";
 import { Experience } from "./Experience";
 import { ChairDetails } from "../Constants";
+import { Menu } from "./Menu";
 
 export function Hero() {
 	const [arg, setArg] = useState(null); // State to store the argument
@@ -47,6 +48,7 @@ export function Hero() {
 						>
 							{isClosed ? "Show Details" : "Hide Details"}
 						</Button>
+						
 					</div>
 				</div>
 
