@@ -76,7 +76,7 @@ a:hover {
 	background-color: #313131;
 }
 
-#colorNav li ul li a {
+#colorNav li ul li a, button.option {
 	padding: 12px;
 	color: #fff !important;
 	text-decoration: none !important;
@@ -85,7 +85,7 @@ a:hover {
 
 #colorNav li ul li:nth-child(odd) {
 	/* zebra stripes */
-	background-color: #313131;
+	background-color: #272727;
 }
 
 #colorNav li ul li:hover {
@@ -150,4 +150,8 @@ a:hover {
 #colorNav li.purple {
 	background-color: #df6dc2;
 	color: #9f3c85;
+}
+#colorNav li.orange {
+	background-color: #f68b2c;
+	color: #b85b1a;
 }

@@ -45,10 +45,17 @@ export function Hero() {
 					<div className="absolute md:right-0 md:bottom-9 right-9 bottom-0">
 						<Button
 							size="lg"
-							variant="filled"
+							variant="other"
 							onClick={handleToggleClick}
 						>
 							{isClosed ? "Show Details" : "Hide Details"}
+						</Button>
+						<Button
+							size="lg"
+							variant=""
+							onClick={handleFirstButtonClick}
+						>
+							Abcd
 						</Button>
 						
 					</div>

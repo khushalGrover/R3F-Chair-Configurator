@@ -9,9 +9,14 @@ const Button = ({ children, size, variant, onClick }) => {
   }
   if (variant === 'outline') {
     classes += ' border border-gray-400 text-gray-700';
-  } else {
-    classes += ' bg-blue-500 text-white';
+  } 
+  if (variant === 'other'){
+    classes += ' bg-[#191920] text-white';
   }
+  if (variant === 'dropdown') {
+    classes = 'px-3 py-2 text-white no-underline block';
+  }
+
 
   return (
     <button className={classes} onClick={onClick}>

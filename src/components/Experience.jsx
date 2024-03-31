@@ -1,5 +1,5 @@
 import { OrbitControls, PresentationControls, Stage, MeshReflectorMaterial, useTexture } from "@react-three/drei";
-import { Chair_model } from "./Chair_model";
+import { Chairs_2 } from "./Chairs_2";
 
 export const Experience = ({ arg }) => {
 	// const props = useTexture({
@@ -24,7 +24,9 @@ export const Experience = ({ arg }) => {
 						<boxGeometry />
 						<meshStandardMaterial {...props} />
 					</mesh> */}
-					<Chair_model />
+					{/* <Chair_model /> */}
+					<Chairs_2 />
+
 				</Stage>
 				<mesh rotation={[-Math.PI / 2, 0, 0]} position={[0,-0.4, 0]}>
 					<planeGeometry args={[100, 100]} />

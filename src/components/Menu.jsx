@@ -1,110 +1,110 @@
 import React from "react";
 import "./menu.css"; // Import menu.css file
+import Button from "./Button"; // Import your custom Button component
 
 export function Menu() {
-	const li = 5;
-	const iconSize = "150px";
-	const menuSize = "60px";
-	const unitSize = "45px";
-	const menuPosition = `calc((${menuSize} * 2 - ${iconSize}) / -2)`;
-	const offset = "60px";
-	const deg = 180 / li;
-
+	
 	return (
 		<nav id="colorNav">
 			<ul>
-				<li className="green">
-					<a href="#" className="">
+				<li className="red">
+					
+					<img src="./Icon/chair-arm.png" alt="chairBack-image" />{" "}
+					
+					<DropDownList />
+				</li>
+				<li className="purple">
+				
 						<img
 							src="./Icon/chair-back.png"
 							alt="chairBack-image"
 						/>
-					</a>
+					
 					<ul>
 						<li>
 							<a href="#">None</a>
 						</li>
 						<li>
-							<a href="#">Classic</a>
+							<a href="#">Classic Back</a>
 						</li>
 						<li>
-							<a href="#">Moderen</a>
+							<a href="#">Moderen Back</a>
 						</li>
 						<li>
-							<a href="#">Royal</a>
+							<a href="#">Royal Back</a>
 						</li>
 					</ul>
 				</li>
-				<li className="red">
-					<a href="#" className="">
-						<img src="./Icon/chair-arm.png" alt="chairBack-image" />{" "}
-					</a>
-					<ul>
-						<li>
-							<a href="#">None</a>
-						</li>
-						<li>
-							<a href="#">Classic</a>
-						</li>
-						<li>
-							<a href="#">Moderen</a>
-						</li>
-						<li>
-							<a href="#">Royal</a>
-						</li>
-					</ul>
-				</li>
-				<li className="blue">
-					<a href="#" className="">
-						<img
-							src="./Icon/chair-legs.png"
-							alt="chairLegs-image"
-						/>
-					</a>
-					<ul>
-						<li>
-							<a href="#">Classic</a>
-						</li>
-						<li>
-							<a href="#">Moderen</a>
-						</li>
-						<li>
-							<a href="#">Royal</a>
-						</li>
-					</ul>
-				</li>
-				<li className="purple">
-					<a href="#" className="">
+				<li className="green">
+					
 						<img
 							src="./Icon/chair-cushion.png"
 							alt="chairSeat-image"
 						/>
-					</a>
+					
 					<ul>
 						<li>
 							<a href="#">None</a>
 						</li>
 						<li>
-							<a href="#">Classic</a>
+							<a href="#">Classic Cushion</a>
 						</li>
 						<li>
-							<a href="#">Moderen</a>
+							<a href="#">Moderen Cushion</a>
 						</li>
 						<li>
-							<a href="#">Royal</a>
+							<a href="#">Royal Cushion</a>
+						</li>
+					</ul>
+				</li>
+				<li className="blue">
+					
+						<img
+							src="./Icon/chair-legs.png"
+							alt="chairLegs-image"
+						/>
+					
+					<ul>
+						<li>
+							<a href="#">Classic Legs</a>
+						</li>
+						<li>
+							<a href="#">Moderen Legs</a>
+						</li>
+						<li>
+							<a href="#">Royal Legs</a>
+						</li>
+					</ul>
+				</li>
+				<li className="orange">
+					
+						<img
+							src="./Icon/chair-cushion.png"
+							alt="chair sets image"
+						/>
+					
+					<ul>
+						<li>
+							<a href="#">Classic Seat</a>
+						</li>
+						<li>
+							<a href="#">Modere Seat</a>
+						</li>
+						<li>
+							<a href="#">Royal Seat</a>
 						</li>
 					</ul>
 				</li>
 				<li className="yellow">
-					<a href="#" className="">
-						<img
-							src="./Icon/chair.png"
-							alt="chair"
-						/>
-					</a>
+					
+						<img src="./Icon/chair.png" alt="chair sets image" />
+					
 					<ul>
 						<li>
-							<a href="#">Classic Set</a>
+							{/* <a href="#">Classic Set</a>  */}
+							<Button size="lg" variant="dropdown" onClick={console.log("yeah pressed")}>
+								Classic Set
+							</Button>
 						</li>
 						<li>
 							<a href="#">Modere Set</a>
@@ -117,4 +117,24 @@ export function Menu() {
 			</ul>
 		</nav>
 	);
+
+
+	function DropDownList() {
+		return (
+			<ul>
+				<li>
+					<a href="#">None</a>
+				</li>
+				<li>
+					<a href="#">Classic Arm</a>
+				</li>
+				<li>
+					<a href="#">Moderen Arm</a>
+				</li>
+				<li>
+					<a href="#">Royal Arm</a>
+				</li>
+			</ul>
+		);
+	}
 }
