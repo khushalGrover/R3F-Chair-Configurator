@@ -1,5 +1,6 @@
 import { OrbitControls, PresentationControls, Stage, MeshReflectorMaterial, useTexture } from "@react-three/drei";
 import { Chair_model } from "./Chair_model";
+
 export const Experience = ({ arg }) => {
 	// const props = useTexture({
 	//   map: 'PavingStones092_1K_Color.jpg',
@@ -40,6 +41,7 @@ export const Experience = ({ arg }) => {
 						matalness={0.5}
 					/>
 				</mesh>
+
     		{/* </PresentationControls> */}
 		</>
 	);

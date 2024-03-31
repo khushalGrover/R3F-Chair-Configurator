@@ -3,8 +3,7 @@ import { Menu } from "./components/Menu";
 function App() {
   return (
     <>
-      {/* <Hero /> */}
-      <Menu />
+      <Hero />
     </>
   );
 }

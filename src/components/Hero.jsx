@@ -40,6 +40,8 @@ export function Hero() {
 						<fog attach="fog" args={["#191920", 0, 15]} />
 						<Experience arg={arg} />
 					</Canvas>
+
+					
 					<div className="absolute md:right-0 md:bottom-9 right-9 bottom-0">
 						<Button
 							size="lg"
@@ -53,7 +55,7 @@ export function Hero() {
 				</div>
 
 				<div className="absolute inset-x-0 top-0 flex w-full justify-center gap-2 mt-2">
-					<Button
+					{/* <Button
 						size="lg"
 						variant="filled"
 						className="text-blue-600 hover:text-red-600"
@@ -77,7 +79,8 @@ export function Hero() {
 						onClick={handleThirdButtonClick}
 					>
 						Third Button
-					</Button>
+					</Button> */}
+					<Menu />
 				</div>
 
 				{isClosed ? null : (
