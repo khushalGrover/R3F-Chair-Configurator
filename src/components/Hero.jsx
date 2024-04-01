@@ -41,7 +41,6 @@ export function Hero() {
 						<Experience arg={arg} />
 					</Canvas>
 
-					
 					<div className="absolute md:right-0 md:bottom-9 right-9 bottom-0">
 						<Button
 							size="lg"
@@ -50,44 +49,11 @@ export function Hero() {
 						>
 							{isClosed ? "Show Details" : "Hide Details"}
 						</Button>
-						<Button
-							size="lg"
-							variant=""
-							onClick={handleFirstButtonClick}
-						>
-							Abcd
-						</Button>
-						
 					</div>
 				</div>
 
 				<div className="absolute inset-x-0 top-0 flex w-full justify-center gap-2 mt-2">
-					{/* <Button
-						size="lg"
-						variant="filled"
-						className="text-blue-600 hover:text-red-600"
-						onClick={handleFirstButtonClick}
-					>
-						First Button
-					</Button>
-					<Button
-						size="sm"
-						color="#fff"
-						variant="filled"
-						className="text-blue-600 hover:text-red-600"
-						onClick={handleSecondButtonClick}
-					>
-						Second Button
-					</Button>
-					<Button
-						size="lg"
-						variant="filled"
-						className="text-blue-600 hover:text-red-600"
-						onClick={handleThirdButtonClick}
-					>
-						Third Button
-					</Button> */}
-					<Menu />
+					{isClosed && <Menu />}
 				</div>
 
 				{isClosed ? null : (
@@ -106,12 +72,8 @@ export function Hero() {
 							</div>
 						</div>
 						<div className="grid gap-4 text-sm leading-loose">
-							<p>
-								{ChairDetails[0].heading} -{" "}
-							</p>
-							<p>
-								{ChairDetails[0].description} 
-							</p>
+							<p>{ChairDetails[0].heading} - </p>
+							<p>{ChairDetails[0].description}</p>
 						</div>
 					</div>
 				)}
