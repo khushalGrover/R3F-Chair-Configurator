@@ -64,8 +64,8 @@ a:hover {
 	font: bold 12px "Open Sans Condensed", sans-serif;
 
 	/* This is important for the show/hide CSS animation */
-	max-height: 0px;
-	overflow: hidden;
+	/* max-height: 0px; */
+	/* overflow: hidden; */
 
 	-webkit-transition: max-height 0.4s linear;
 	-moz-transition: max-height 0.4s linear;
