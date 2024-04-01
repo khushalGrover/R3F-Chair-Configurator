@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400&display=swap");
 
-.App {
+.canvas {
   width: 100vw;
   height: 100vh;
   -webkit-touch-callout: none; /* iOS Safari */
@@ -15,12 +15,16 @@
 .configurator {
   position: fixed;
   right: 24px;
+  top:10%;
   bottom: 25vh;
   width: 360px;
   padding: 24px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  background-color: #36363650;
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
 }
 
 .configurator__section__title {

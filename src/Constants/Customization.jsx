@@ -75,8 +75,12 @@ const CustomizationContext = createContext({});
 export const CustomizationProvider = (props) => {
   const [material, setMaterial] = useState("leather");
   const [legs, setLegs] = useState(1);
+  const [arms, setArms] = useState(1);
+  const [back, setBack] = useState(1);
   const [chairColor, setChairColor] = useState(chairColors[0]);
+  const [cushion, setCushion] = useState(1);
   const [cushionColor, setCushionColor] = useState(cushionColors[0]);
+  const [seat, setSeat] = useState(1);
 
   return (
     <CustomizationContext.Provider
@@ -85,12 +89,20 @@ export const CustomizationProvider = (props) => {
         setMaterial,
         legs,
         setLegs,
+        arms,
+        setArms,
+        back,
+        setBack,
+        cushion,
+        setCushion,
         chairColors,
         chairColor,
         setChairColor,
         cushionColors,
         cushionColor,
         setCushionColor,
+        seat,
+        setSeat,
       }}
     >
       {props.children}

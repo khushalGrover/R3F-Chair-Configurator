@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import Button from "./Button"; // Import your custom Button component
 import { Canvas } from "@react-three/fiber";
 import { Experience } from "./Experience";
+import Configurator from "./Configurator";
+import { CustomizationProvider } from "../Constants/Customization";
 import { ChairDetails } from "../Constants";
 import { Menu } from "./Menu";
 import "../App.css";
@@ -36,11 +38,18 @@ export function Hero() {
 							: "w-full h-1/2 md:w-1/2 md:h-full"
 					} relative`}
 				>
-					<Canvas shadows camera={{ position: [40, 0, 60], fov: 35 }}>
-						<color attach="background" args={["#191920"]} />
-						<fog attach="fog" args={["#191920", 0, 15]} />
-						<Experience arg={arg} />
-					</Canvas>
+					<CustomizationProvider>
+						<Canvas
+							shadows
+							camera={{ position: [40, 0, 60], fov: 35 } }
+							className="canvas"
+						>
+							<color attach="background" args={["#191920"]} />
+							<fog attach="fog" args={["#191920", 0, 15]} />
+							<Experience arg={arg} />
+						</Canvas>
+						{isClosed && <Configurator/>}
+					</CustomizationProvider>
 
 					<div className="absolute md:right-0 md:bottom-9 right-9 bottom-0">
 						<Button
@@ -53,10 +62,10 @@ export function Hero() {
 					</div>
 				</div>
 
-				<div className="absolute inset-x-0 top-0 flex w-full justify-center gap-2 mt-2">
-					{/* {isClosed && <Menu />} */}
-					<Menu />
-				</div>
+
+				{/* <div className="absolute inset-x-0 top-0 flex w-full justify-center gap-2 mt-2">
+					{isClosed && <Menu />}
+				</div> */}
 
 				{isClosed ? null : (
 					<div className="grid gap-4 px-6 text-slate-400">
