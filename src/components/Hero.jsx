@@ -5,6 +5,7 @@ import { Canvas } from "@react-three/fiber";
 import { Experience } from "./Experience";
 import { ChairDetails } from "../Constants";
 import { Menu } from "./Menu";
+import "../App.css";
 
 export function Hero() {
 	const [arg, setArg] = useState(null); // State to store the argument
@@ -53,7 +54,8 @@ export function Hero() {
 				</div>
 
 				<div className="absolute inset-x-0 top-0 flex w-full justify-center gap-2 mt-2">
-					{isClosed && <Menu />}
+					{/* {isClosed && <Menu />} */}
+					<Menu />
 				</div>
 
 				{isClosed ? null : (

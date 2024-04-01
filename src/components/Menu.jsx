@@ -22,9 +22,10 @@ export function Menu() {
 			<ul className="h-[250px]">
 				{children.map((item, index) => (
 					<li key={index}>
-						<Button variant="dropdown">
+						<Button variant="">
 							{item}
 						</Button>
+							{/* {item} */}
 					</li>
 				))}
 			</ul>
@@ -33,7 +34,7 @@ export function Menu() {
 
 	return (
 		<nav id="colorNav" className="flex justify-center mt-10">
-			<ul className="flex space-x-4">
+			<ul className="menuItems">
 				<MenuItem
 					color="red"
 					icon="./Icon/chair-arm.png"
