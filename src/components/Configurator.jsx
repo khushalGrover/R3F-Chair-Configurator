@@ -18,8 +18,8 @@ const Configurator = () => {
 		setCushionColor,
 		legs,
 		setLegs,
-    seat,
-    setSeat,
+		seat,
+		setSeat,
 	} = useCustomization();
 
 	return (
@@ -81,6 +81,23 @@ const Configurator = () => {
           ))}
         </div>
       </div> */}
+
+			{/* Chair CODE */}
+			<div className="configurator__section">
+				<div className="configurator__section__title">Chair Code:</div>
+				<div className="configurator__section__values">
+					<div
+						className={`item`}
+						onClick={() => {
+							// setArms(1);
+							console.log("code is", arms);
+						}}
+					>
+						<div className="item__label">#-----</div>
+					</div>
+					
+				</div>
+			</div>
 
 			{/* ARMS */}
 			<div className="configurator__section">

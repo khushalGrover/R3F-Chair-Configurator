@@ -24,7 +24,6 @@ export const Experience = ({ arg }) => {
 						<boxGeometry />
 						<meshStandardMaterial {...props} />
 					</mesh> */}
-					{/* <Chair_model /> */}
 					<Chairs_2 />
 
 				</Stage>

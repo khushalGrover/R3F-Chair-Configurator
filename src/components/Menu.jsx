@@ -22,10 +22,8 @@ export function Menu() {
 			<ul className="h-[250px]">
 				{children.map((item, index) => (
 					<li key={index}>
-						<Button variant="">
-							{item}
-						</Button>
-							{/* {item} */}
+						<Button variant="">{item}</Button>
+						{/* {item} */}
 					</li>
 				))}
 			</ul>

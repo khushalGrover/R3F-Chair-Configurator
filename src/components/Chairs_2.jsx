@@ -41,27 +41,27 @@ export function Chairs_2(props) {
 			<mesh
 				geometry={nodes.mdr_Arm.geometry}
 				material={materials.chair}
-        visible={arms === 2 && arms !== 0}
+				visible={arms === 2 && arms !== 0}
 			/>
 			<mesh
 				geometry={nodes.mdr_Back.geometry}
 				material={materials.chair}
-        visible={back === 2 && back !== 0}
+				visible={back === 2 && back !== 0}
 			/>
 			<mesh
 				geometry={nodes.mdr_Cushion.geometry}
 				material={materials.chair}
-        visible={cushion === 2 && cushion !== 0}
+				visible={cushion === 2 && cushion !== 0}
 			/>
 			<mesh
 				geometry={nodes.mdr_Legs.geometry}
 				material={materials.chair}
-        visible={legs === 2}
+				visible={legs === 2}
 			/>
 			<mesh
 				geometry={nodes.mdr_Seat.geometry}
 				material={materials.chair}
-        visible={seat === 2}
+				visible={seat === 2}
 			/>
 		</group>
 	);
