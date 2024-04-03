@@ -62,7 +62,7 @@ const Spinner = ({
 	};
 
 	function handleObjectCodeUpdateAtIndex(tIndex) {
-		
+		// in case 3 and case4, index is incremented by 1 bcz the index starts from 1 not 0 , bcz none option is not included for legs and seat
         switch (tIndex) {
             case 0: 
                 setObjectCode(index + objectCode.charAt(1) + objectCode.slice(2));
@@ -74,10 +74,10 @@ const Spinner = ({
                 setObjectCode(objectCode.charAt(0) + objectCode.charAt(1) + index + objectCode.slice(3));
                 break;
             case 3:
-                setObjectCode(objectCode.charAt(0) + objectCode.charAt(1) + objectCode.charAt(2) + index + objectCode.slice(4));
+                setObjectCode(objectCode.charAt(0) + objectCode.charAt(1) + objectCode.charAt(2) + (index + 1) + objectCode.slice(4));
                 break;
             case 4:
-                setObjectCode(objectCode.charAt(0) + objectCode.charAt(1) + objectCode.charAt(2) + objectCode.charAt(3) + index);
+                setObjectCode(objectCode.charAt(0) + objectCode.charAt(1) + objectCode.charAt(2) + objectCode.charAt(3) + (index + 1));
                 break;
             default:
                 break;

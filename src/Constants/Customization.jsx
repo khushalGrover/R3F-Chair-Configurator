@@ -74,7 +74,7 @@ const CustomizationContext = createContext({});
 
 export const CustomizationProvider = (props) => {
   const [rawValue, setRawValue] = useState("");
-  const [objectCode, setObjectCode] = useState("00000");
+  const [objectCode, setObjectCode] = useState("11111");
   const [material, setMaterial] = useState("leather");
   const [legs, setLegs] = useState(1);
   const [arms, setArms] = useState(1);

@@ -4,7 +4,6 @@ import Button from "./Button"; // Import your custom Button component
 import { Canvas } from "@react-three/fiber";
 import { Experience } from "./Experience";
 import Configurator from "./Configurator";
-import Configurator2 from "./Configurator2";
 import { CustomizationProvider } from "../Constants/Customization";
 import { ChairDetails } from "../Constants";
 import { Menu } from "./Menu";

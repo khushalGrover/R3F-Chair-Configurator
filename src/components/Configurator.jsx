@@ -156,169 +156,55 @@ const Configurator = () => {
 					objectCode={objectCode}
 					setObjectCode={setObjectCode}
 				/>
-				{/* <div className="configurator__section__values">
-					<div
-						className={`item ${
-							objectCode.charAt(0) === 1 ? "item--active" : ""
-						}`}
-						onClick={() => {
-							// assine 1 to objectCode at 0th index
-							setObjectCode(
-								"1" + objectCode.charAt(1) + objectCode.slice(2)
-							);
-							console.log(
-								rawValue,
-								"< raw value__ ARM-VALUE ___objectCode at 1>",
-								objectCode
-							);
-							// console.log("Arms are", arms);
-						}}
-					>
-						<div className="item__label">Classic</div>
-					</div>
-					<div
-						className={`item ${arms === 2 ? "item--active" : ""}`}
-						onClick={() => {
-							setArms(2);
-							console.log("Arms are", arms);
-						}}
-					>
-						<div className="item__label">Design</div>
-					</div>
-					<div
-						className={`item ${arms === 0 ? "item--active" : ""}`}
-						onClick={() => {
-							setArms(0);
-							console.log("Arms are", arms);
-						}}
-					>
-						<div className="item__label">None</div>
-					</div>
-				</div> */}
+				
 			</div>
 
 			{/* BACK */}
 			<div className="configurator__section">
 				<div className="configurator__section__title">Back</div>
-				<div className="configurator__section__values">
-					<div
-						className={`item ${back === 1 ? "item--active" : ""}`}
-						onClick={() => {
-							setBack(1);
-							console.log("back are", back);
-						}}
-					>
-						<div className="item__label">Classic</div>
-					</div>
-					<div
-						className={`item ${back === 2 ? "item--active" : ""}`}
-						onClick={() => {
-							setBack(2);
-							console.log("back are", back);
-						}}
-					>
-						<div className="item__label">Design</div>
-					</div>
-					<div
-						className={`item ${back === 0 ? "item--active" : ""}`}
-						onClick={() => {
-							setBack(0);
-							console.log("back are", back);
-						}}
-					>
-						<div className="item__label">None</div>
-					</div>
-				</div>
+				<Spinner
+					targetIndex={1}
+					type="text"
+					items={["none", "classic", "modern"]}
+					objectCode={objectCode}
+					setObjectCode={setObjectCode}
+				/>
 			</div>
 
 			{/* CUSHION */}
 			<div className="configurator__section">
 				<div className="configurator__section__title">Cushion</div>
-				<div className="configurator__section__values">
-					<div
-						className={`item ${
-							cushion === 1 ? "item--active" : ""
-						}`}
-						onClick={() => {
-							setCushion(1);
-							console.log("cushion is", cushion);
-						}}
-					>
-						<div className="item__label">Classic</div>
-					</div>
-					<div
-						className={`item ${
-							cushion === 2 ? "item--active" : ""
-						}`}
-						onClick={() => {
-							setCushion(2);
-							console.log("cushion is", cushion);
-						}}
-					>
-						<div className="item__label">Design</div>
-					</div>
-					<div
-						className={`item ${
-							cushion === 0 ? "item--active" : ""
-						}`}
-						onClick={() => {
-							setCushion(0);
-							console.log("cushion is", cushion);
-						}}
-					>
-						<div className="item__label">None</div>
-					</div>
-				</div>
+				<Spinner
+					targetIndex={2}
+					type="text"
+					items={["none", "classic", "modern"]}
+					objectCode={objectCode}
+					setObjectCode={setObjectCode}
+				/>
 			</div>
 
 			{/* LEGS */}
 			<div className="configurator__section">
 				<div className="configurator__section__title">Legs</div>
-				<div className="configurator__section__values">
-					<div
-						className={`item ${legs === 1 ? "item--active" : ""}`}
-						onClick={() => {
-							setLegs(1);
-							console.log("Legs are", legs);
-						}}
-					>
-						<div className="item__label">Classic</div>
-					</div>
-					<div
-						className={`item ${legs === 2 ? "item--active" : ""}`}
-						onClick={() => {
-							setLegs(2);
-							console.log("Legs are", legs);
-						}}
-					>
-						<div className="item__label">Design</div>
-					</div>
-				</div>
+				<Spinner
+					targetIndex={3}
+					type="text"
+					items={["classic", "modern"]}
+					objectCode={objectCode}
+					setObjectCode={setObjectCode}
+				/>
 			</div>
 
 			{/* SEAT */}
 			<div className="configurator__section">
 				<div className="configurator__section__title">Seat</div>
-				<div className="configurator__section__values">
-					<div
-						className={`item ${seat === 1 ? "item--active" : ""}`}
-						onClick={() => {
-							setSeat(1);
-							console.log("Seat are", seat);
-						}}
-					>
-						<div className="item__label">Classic</div>
-					</div>
-					<div
-						className={`item ${seat === 2 ? "item--active" : ""}`}
-						onClick={() => {
-							setSeat(2);
-							console.log("Seat are", seat);
-						}}
-					>
-						<div className="item__label">Design</div>
-					</div>
-				</div>
+				<Spinner
+					targetIndex={4}
+					type="text"
+					items={["classic", "modern"]}
+					objectCode={objectCode}
+					setObjectCode={setObjectCode}
+				/>
 			</div>
 		</div>
 	);
