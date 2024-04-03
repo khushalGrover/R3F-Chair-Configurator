@@ -1,5 +1,5 @@
 import { useCustomization } from "../Constants/Customization";
-import Spinner from "./Spinner";
+
 const Configurator = () => {
 	const {
 		material,
@@ -20,151 +20,94 @@ const Configurator = () => {
 		setLegs,
 		seat,
 		setSeat,
-		rawValue,
-		setRawValue,
-		objectCode,
-		setObjectCode,
 	} = useCustomization();
-
-	let isValid = false;
-	const minValidCode = "00011";
-	const maxValidCode = "22222";
-
-	const handleSetCode = () => {
-		if (rawValue.length === 5) {
-			setObjectCode("" + rawValue);
-			console.log(rawValue, "!!! Final value of objectCode", objectCode);
-		} else {
-			console.log("Invalid code");
-		}
-	};
-	const handleChange = (e) => {
-		const value = e.target.value;
-		// Validate input to allow numbers only and only 5 digits
-		if (/^\d*$/.test(value) && value.length <= 5) {
-			setRawValue(value);
-		}
-	};
 
 	return (
 		<div className="configurator">
 			{/* <div className="configurator__section">
-				<div className="configurator__section__title">
-					Chair material
-				</div>
-				<div className="configurator__section__values">
-					<div
-						className={`item ${
-							material === "leather" ? "item--active" : ""
-						}`}
-						onClick={() => setMaterial("leather")}
-					>
-						<div className="item__label">Leather</div>
-					</div>
-					<div
-						className={`item ${
-							material === "fabric" ? "item--active" : ""
-						}`}
-						onClick={() => setMaterial("fabric")}
-					>
-						<div className="item__label">Fabric</div>
-					</div>
-				</div>
-			</div>
-			<div className="configurator__section">
-				<div className="configurator__section__title">Chair color</div>
-				<div className="configurator__section__values">
-					{chairColors.map((item, index) => (
-						<div
-							key={index}
-							className={`item ${
-								item.color === chairColor.color
-									? "item--active"
-									: ""
-							}`}
-							onClick={() => setChairColor(item)}
-						>
-							<div
-								className="item__dot"
-								style={{ backgroundColor: item.color }}
-							/>
-							<div className="item__label">{item.name}</div>
-						</div>
-					))}
-				</div>
-			</div>
-			<div className="configurator__section">
-				<div className="configurator__section__title">
-					Cushion color
-				</div>
-				<div className="configurator__section__values">
-					{cushionColors.map((item, index) => (
-						<div
-							key={index}
-							className={`item ${
-								item.color === cushionColor.color
-									? "item--active"
-									: ""
-							}`}
-							onClick={() => setCushionColor(item)}
-						>
-							<div
-								className="item__dot"
-								style={{ backgroundColor: item.color }}
-							/>
-							<div className="item__label">{item.name}</div>
-						</div>
-					))}
-				</div>
-			</div> */}
+        <div className="configurator__section__title">Chair material</div>
+        <div className="configurator__section__values">
+          <div
+            className={`item ${material === "leather" ? "item--active" : ""}`}
+            onClick={() => setMaterial("leather")}
+          >
+            <div className="item__label">Leather</div>
+          </div>
+          <div
+            className={`item ${material === "fabric" ? "item--active" : ""}`}
+            onClick={() => setMaterial("fabric")}
+          >
+            <div className="item__label">Fabric</div>
+          </div>
+        </div>
+      </div>
+      <div className="configurator__section">
+        <div className="configurator__section__title">Chair color</div>
+        <div className="configurator__section__values">
+          {chairColors.map((item, index) => (
+            <div
+              key={index}
+              className={`item ${
+                item.color === chairColor.color ? "item--active" : ""
+              }`}
+              onClick={() => setChairColor(item)}
+            >
+              <div
+                className="item__dot"
+                style={{ backgroundColor: item.color }}
+              />
+              <div className="item__label">{item.name}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="configurator__section">
+        <div className="configurator__section__title">Cushion color</div>
+        <div className="configurator__section__values">
+          {cushionColors.map((item, index) => (
+            <div
+              key={index}
+              className={`item ${
+                item.color === cushionColor.color ? "item--active" : ""
+              }`}
+              onClick={() => setCushionColor(item)}
+            >
+              <div
+                className="item__dot"
+                style={{ backgroundColor: item.color }}
+              />
+              <div className="item__label">{item.name}</div>
+            </div>
+          ))}
+        </div>
+      </div> */}
 
 			{/* Chair CODE */}
 			<div className="configurator__section">
-				<div className="configurator__section__title">
-					Chair Code: #{objectCode}
-				</div>
-
+				<div className="configurator__section__title">Chair Code:</div>
 				<div className="configurator__section__values">
 					<div
 						className={`item`}
 						onClick={() => {
 							// setArms(1);
-							// console.log("code is", arms);
+							console.log("code is", arms);
 						}}
 					>
-						<input
-							type="text"
-							value={rawValue}
-							onChange={handleChange}
-							placeholder="Enter Code(numbers only)"
-						/>
-
-						<div className="item__label" onClick={handleSetCode}>
-							Set
-						</div>
+						<div className="item__label">#-----</div>
 					</div>
+					
 				</div>
 			</div>
-			<Spinner type="text" items={["classic", "modern", "none"]} />
+
 			{/* ARMS */}
 			<div className="configurator__section">
 				<div className="configurator__section__title">Arm</div>
 				<div className="configurator__section__values">
 					<div
-						className={`item ${
-							objectCode.charAt(0) === 1 ? "item--active" : ""
-						}`}
+						className={`item ${arms === 1 ? "item--active" : ""}`}
 						onClick={() => {
-							// assine 1 to objectCode at 0th index
-							setObjectCode(
-								"1" + objectCode.charAt(1) + objectCode.slice(2)
-							);
-							console.log(
-								rawValue,
-								"< raw value__ ARM-VALUE ___objectCode at 1>",
-								objectCode
-							);
-							// console.log("Arms are", arms);
+							setArms(1);
+							console.log("Arms are", arms);
 						}}
 					>
 						<div className="item__label">Classic</div>

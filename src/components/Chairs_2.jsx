@@ -9,14 +9,14 @@ import { useCustomization } from "../Constants/Customization";
 
 export function Chairs_2(props) {
 	const { nodes, materials } = useGLTF("./Models/v2/chairs_2.gltf");
-	const { arms, legs, back, cushion, seat } = useCustomization();
+	const { partToMeshMapping, arms, legs, back, cushion, seat } = useCustomization();
 
 	return (
 		<group {...props} dispose={null} scale={[0.1, 0.1, 0.1]}>
 			<mesh
 				geometry={nodes.classic_Arm.geometry}
 				material={materials.chair}
-				visible={arms === 1 && arms !== 0}
+				visible={partToMeshMapping['A'] === 1 && arms !== 0}
 			/>
 			<mesh
 				geometry={nodes.classic_Back.geometry}
@@ -41,7 +41,7 @@ export function Chairs_2(props) {
 			<mesh
 				geometry={nodes.mdr_Arm.geometry}
 				material={materials.chair}
-				visible={arms === 2 && arms !== 0}
+				visible={partToMeshMapping['B'] === 2  && arms !== 0}
 			/>
 			<mesh
 				geometry={nodes.mdr_Back.geometry}

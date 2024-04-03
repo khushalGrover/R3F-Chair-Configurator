@@ -4,6 +4,7 @@ import Button from "./Button"; // Import your custom Button component
 import { Canvas } from "@react-three/fiber";
 import { Experience } from "./Experience";
 import Configurator from "./Configurator";
+import Configurator2 from "./Configurator2";
 import { CustomizationProvider } from "../Constants/Customization";
 import { ChairDetails } from "../Constants";
 import { Menu } from "./Menu";
@@ -12,22 +13,29 @@ import "../App.css";
 export function Hero() {
 	const [arg, setArg] = useState(null); // State to store the argument
 	const [isClosed, setIsClosed] = useState(false);
-	const handleFirstButtonClick = () => {
-		setArg("1");
-		console.log("First button clicked:", arg);
-		console.log("name of object is", ChairDetails[0].name);
+	const [CValue, setCValue] = useState("");
+
+	const handleSetCode = () => {
+		
+		if(CValue.length === 5) {
+			console.log("# # # # # final value is", CValue);
+		}
+		else {
+			console.log("Invalid code");
+		}
+		
 	};
-	const handleSecondButtonClick = () => {
-		setArg("2");
-		console.log("Second button clicked:", arg);
-	};
-	const handleThirdButtonClick = () => {
-		setArg("3");
-		console.log("Third button clicked:", arg);
+	const handleChange = (e) => {
+		const value = e.target.value;
+		// Validate input to allow numbers only
+		if (/^\d*$/.test(value) && value.length <= 5) {
+			setCValue(value);
+		} 
 	};
 	const handleToggleClick = () => {
 		setIsClosed(!isClosed);
 	};
+
 	return (
 		<>
 			<div className="flex flex-col md:flex-row h-dvh w-full items-center justify-center relative bg-[#191920]">
@@ -41,14 +49,15 @@ export function Hero() {
 					<CustomizationProvider>
 						<Canvas
 							shadows
-							camera={{ position: [40, 0, 60], fov: 35 } }
+							camera={{ position: [40, 0, 60], fov: 35 }}
 							className="canvas"
 						>
 							<color attach="background" args={["#191920"]} />
 							<fog attach="fog" args={["#191920", 0, 15]} />
 							<Experience arg={arg} />
 						</Canvas>
-						{isClosed && <Configurator/>}
+						{/* {isClosed && <Configurator/>} */}
+						{isClosed && <Configurator />}
 					</CustomizationProvider>
 
 					<div className="absolute md:right-0 md:bottom-9 right-9 bottom-0">
@@ -62,11 +71,30 @@ export function Hero() {
 					</div>
 				</div>
 
+				<div className="absolute inset-x-0 top-0 flex w-full justify-center gap-2 mt-2">
+					{/* {isClosed && <Menu />} */}
+					{/* 
+						<input
+						type="text"
+						value={CValue}
+						onChange={handleChange}
+						placeholder="Enter Code(numbers only)"
+					/>
+					<Button
+						size="lg"
+						variant="other"
+						onClick={handleSetCode}
+					>
+						Set Code
+					</Button> 
+					<h1 className="text-white">
+						#12445
+					</h1>
+					*/}
 
-				{/* <div className="absolute inset-x-0 top-0 flex w-full justify-center gap-2 mt-2">
-					{isClosed && <Menu />}
-				</div> */}
-
+				</div>
+				
+				{/* {console.log(CValue)} */}
 				{isClosed ? null : (
 					<div className="grid gap-4 px-6 text-slate-400">
 						<h1 className="font-bold text-2xl sm:text-3xl">

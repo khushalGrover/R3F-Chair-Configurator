@@ -27,7 +27,7 @@ a:hover {
 #colorNav > ul {
 	/* width: 450px; Increase when adding more menu items */
 	margin: 0 auto;
-	background-color: #00ff00;
+	/* background-color: #00ff00; */
 	/* height: 450px; */
 	display: flex;
 	flex-direction: row;

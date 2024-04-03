@@ -73,6 +73,8 @@ const cushionColors = [
 const CustomizationContext = createContext({});
 
 export const CustomizationProvider = (props) => {
+  const [rawValue, setRawValue] = useState("");
+  const [objectCode, setObjectCode] = useState("00000");
   const [material, setMaterial] = useState("leather");
   const [legs, setLegs] = useState(1);
   const [arms, setArms] = useState(1);
@@ -82,9 +84,23 @@ export const CustomizationProvider = (props) => {
   const [cushionColor, setCushionColor] = useState(cushionColors[0]);
   const [seat, setSeat] = useState(1);
 
+  const partToMeshMapping = {
+    A:parseInt(objectCode.charAt(0)), // ARM
+    B:parseInt(objectCode.charAt(1)), // BACK
+    C:parseInt(objectCode.charAt(2)), // CUSHION
+    L:parseInt(objectCode.charAt(3)), // LEGS
+    S:parseInt(objectCode.charAt(4)), // SEAT
+  }
+ 
+  // console.log(partToMeshMapping, "!!! partToMeshMapping");
   return (
     <CustomizationContext.Provider
       value={{
+        rawValue,
+        setRawValue,
+        partToMeshMapping,
+        objectCode,
+        setObjectCode,
         material,
         setMaterial,
         legs,
