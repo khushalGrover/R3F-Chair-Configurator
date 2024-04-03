@@ -125,23 +125,16 @@ const Configurator = () => {
 				</div>
 
 				<div className="configurator__section__values">
-					<div
-						className={`item`}
-						onClick={() => {
-							// setArms(1);
-							// console.log("code is", arms);
-						}}
-					>
-						<input
-							type="text"
-							value={rawValue}
-							onChange={handleChange}
-							placeholder="Enter Code(numbers only)"
-						/>
+					<input
+						type="text"
+						value={rawValue}
+						onChange={handleChange}
+						placeholder="Enter Code(numbers only)"
+						className="w-auto spinner"
+					/>
 
-						<div className="item__label" onClick={handleSetCode}>
-							Set
-						</div>
+					<div className="item__label  cursor-pointer" onClick={handleSetCode}>
+						Set
 					</div>
 				</div>
 			</div>
@@ -156,7 +149,6 @@ const Configurator = () => {
 					objectCode={objectCode}
 					setObjectCode={setObjectCode}
 				/>
-				
 			</div>
 
 			{/* BACK */}
