@@ -145,11 +145,18 @@ const Configurator = () => {
 					</div>
 				</div>
 			</div>
-			<Spinner type="text" items={["classic", "modern", "none"]} />
-			{/* ARMS */}
+			{/* <Spinner type="text" items={["none","classic", "modern" ]} /> */}
+
 			<div className="configurator__section">
 				<div className="configurator__section__title">Arm</div>
-				<div className="configurator__section__values">
+				<Spinner
+					targetIndex={0}
+					type="text"
+					items={["none", "classic", "modern"]}
+					objectCode={objectCode}
+					setObjectCode={setObjectCode}
+				/>
+				{/* <div className="configurator__section__values">
 					<div
 						className={`item ${
 							objectCode.charAt(0) === 1 ? "item--active" : ""
@@ -187,7 +194,7 @@ const Configurator = () => {
 					>
 						<div className="item__label">None</div>
 					</div>
-				</div>
+				</div> */}
 			</div>
 
 			{/* BACK */}

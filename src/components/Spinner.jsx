@@ -1,7 +1,17 @@
 import React, { useState } from "react";
 import Button from "./Button";
 
-const Spinner = ({ type, items, loop, step = 1, max, min }) => {
+const Spinner = ({
+	targetIndex,
+	type,
+	items,
+	loop,
+	step = 1,
+	max,
+	min,
+	objectCode,
+	setObjectCode,
+}) => {
 	const [value, setValue] = useState(items[0]);
 	const [index, setIndex] = useState(0);
 
@@ -25,6 +35,7 @@ const Spinner = ({ type, items, loop, step = 1, max, min }) => {
 				setIndex(0);
 			}
 		}
+		handleObjectCodeUpdateAtIndex(targetIndex);
 	};
 
 	const handleDecrement = () => {
@@ -47,7 +58,33 @@ const Spinner = ({ type, items, loop, step = 1, max, min }) => {
 				setIndex(items.length - 1);
 			}
 		}
+		handleObjectCodeUpdateAtIndex(targetIndex);
 	};
+
+	function handleObjectCodeUpdateAtIndex(tIndex) {
+		
+        switch (tIndex) {
+            case 0: 
+                setObjectCode(index + objectCode.charAt(1) + objectCode.slice(2));
+                break;
+            case 1:
+                setObjectCode(objectCode.charAt(0) + index + objectCode.slice(2));
+                break;
+            case 2:
+                setObjectCode(objectCode.charAt(0) + objectCode.charAt(1) + index + objectCode.slice(3));
+                break;
+            case 3:
+                setObjectCode(objectCode.charAt(0) + objectCode.charAt(1) + objectCode.charAt(2) + index + objectCode.slice(4));
+                break;
+            case 4:
+                setObjectCode(objectCode.charAt(0) + objectCode.charAt(1) + objectCode.charAt(2) + objectCode.charAt(3) + index);
+                break;
+            default:
+                break;
+        
+        }
+        
+	}
 
 	return (
 		<div className="col-md-3 w-auto ">
@@ -68,7 +105,7 @@ const Spinner = ({ type, items, loop, step = 1, max, min }) => {
 						className="spinner"
 					/>
 					<Button size="lg" variant="arrow" onClick={handleIncrement}>
-                    &gt;
+						&gt;
 					</Button>
 				</div>
 			</div>

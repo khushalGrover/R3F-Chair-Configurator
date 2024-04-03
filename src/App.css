@@ -16,7 +16,7 @@
   position: fixed;
   right: 24px;
   top:10%;
-  bottom: 25vh;
+  /* bottom: 25vh; */
   width: 360px;
   padding: 24px;
   display: flex;

@@ -16,52 +16,52 @@ export function Chairs_2(props) {
 			<mesh
 				geometry={nodes.classic_Arm.geometry}
 				material={materials.chair}
-				visible={partToMeshMapping['A'] === 1 && arms !== 0}
+				visible={partToMeshMapping['A'] === 1 && partToMeshMapping['A'] !== 0}
 			/>
 			<mesh
 				geometry={nodes.classic_Back.geometry}
 				material={materials.chair}
-				visible={back === 1 && back !== 0}
+				visible={partToMeshMapping['B'] === 1 && partToMeshMapping['B'] !== 0}
 			/>
 			<mesh
 				geometry={nodes.classic_Cushion.geometry}
 				material={materials.chair}
-				visible={cushion === 1 && cushion !== 0}
+				visible={partToMeshMapping['C'] === 1 && partToMeshMapping['C'] !== 0}
 			/>
 			<mesh
 				geometry={nodes.classic_Seat.geometry}
 				material={materials.chair}
-				visible={seat === 1}
+				visible={partToMeshMapping['S'] === 1}
 			/>
 			<mesh
 				geometry={nodes.classic_Legs.geometry}
 				material={materials.chair}
-				visible={legs === 1}
+				visible={partToMeshMapping['L'] === 1}
 			/>
 			<mesh
 				geometry={nodes.mdr_Arm.geometry}
 				material={materials.chair}
-				visible={partToMeshMapping['B'] === 2  && arms !== 0}
+				visible={partToMeshMapping['A'] === 2  && partToMeshMapping['A'] !== 0}
 			/>
 			<mesh
 				geometry={nodes.mdr_Back.geometry}
 				material={materials.chair}
-				visible={back === 2 && back !== 0}
+				visible={partToMeshMapping['B'] === 2 && partToMeshMapping['B'] !== 0}
 			/>
 			<mesh
 				geometry={nodes.mdr_Cushion.geometry}
 				material={materials.chair}
-				visible={cushion === 2 && cushion !== 0}
+				visible={partToMeshMapping['C'] === 2 && partToMeshMapping['C'] !== 0}
 			/>
 			<mesh
 				geometry={nodes.mdr_Legs.geometry}
 				material={materials.chair}
-				visible={legs === 2}
+				visible={partToMeshMapping['L'] === 2}
 			/>
 			<mesh
 				geometry={nodes.mdr_Seat.geometry}
 				material={materials.chair}
-				visible={seat === 2}
+				visible={partToMeshMapping['S'] === 2}
 			/>
 		</group>
 	);
