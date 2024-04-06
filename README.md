@@ -1,16 +1,25 @@
-﻿# R3F-Chair-Configurator
+# R3F-Chair-Configurator
 
-This project is a practice repository for building R3F (React Three Fiber) projects using a boilerplate called r3f-vite-starter. The repository can be found at [https://github.com/khushalGrover/r3f-vite-starter](https://github.com/khushalGrover/r3f-vite-starter).
+This project is a practice repository for customization in R3F (React Three Fiber). This projects using a boilerplate called r3f-vite-starter. The repository can be found at [https://github.com/khushalGrover/r3f-vite-starter](https://github.com/khushalGrover/r3f-vite-starter).
 
+## Features
+- Customize various parts of chairs:
+  - Arms
+  - Back
+  - Cushion
+  - Seats
+  - Legs
+- Built with Tailwind CSS and React Three Fiber
 
-## HOW TO START
-After cloning from [https://github.com/khushalGrover/R3F-Chair-Configurator]
+## Preview
+![](https://github.com/khushalGrover/R3F-Chair-Configurator/blob/main/public/tumbnail%20src/chairConfig-ezgif.com-video-to-gif-converter.gif)
 
-To get started, make sure you have yarn installed. Then, run the following commands in your terminal:
+## How to Start
+After cloning from [https://github.com/khushalGrover/R3F-Chair-Configurator], follow these steps to get started:
 
+1. Make sure you have yarn installed. If not, install it from [https://yarnpkg.com/](https://yarnpkg.com/).
+2. Run the following commands in your terminal:
 
-
-```
+```bash
 yarn
 yarn dev
-```
