@@ -48,7 +48,8 @@ const Configurator = () => {
 
 	return (
 		<div className="configurator">
-			{/* <div className="configurator__section">
+			{/*}
+			 <div className="configurator__section">
 				<div className="configurator__section__title">
 					Chair material
 				</div>
@@ -92,7 +93,34 @@ const Configurator = () => {
 						</div>
 					))}
 				</div>
+			</div> */}
+			
+			
+			{/* Chair CODE */}
+			<div className="configurator__section">
+				<div className="configurator__section__title">
+					Chair Code: #{objectCode}
+				</div>
+
+				<div className="configurator__section__values">
+					<input
+						type="text"
+						value={rawValue}
+						onChange={handleChange}
+						placeholder="Enter Code(numbers only)"
+						className="w-auto spinner"
+					/>
+
+					<div
+						className="item__label  cursor-pointer"
+						onClick={handleSetCode}
+					>
+						Set
+					</div>
+				</div>
 			</div>
+			
+			{/* Cushion Color */}
 			<div className="configurator__section">
 				<div className="configurator__section__title">
 					Cushion color
@@ -116,28 +144,9 @@ const Configurator = () => {
 						</div>
 					))}
 				</div>
-			</div> */}
-
-			{/* Chair CODE */}
-			<div className="configurator__section">
-				<div className="configurator__section__title">
-					Chair Code: #{objectCode}
-				</div>
-
-				<div className="configurator__section__values">
-					<input
-						type="text"
-						value={rawValue}
-						onChange={handleChange}
-						placeholder="Enter Code(numbers only)"
-						className="w-auto spinner"
-					/>
-
-					<div className="item__label  cursor-pointer" onClick={handleSetCode}>
-						Set
-					</div>
-				</div>
 			</div>
+
+			
 			{/* <Spinner type="text" items={["none","classic", "modern" ]} /> */}
 
 			<div className="configurator__section">
