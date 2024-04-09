@@ -71,7 +71,7 @@ export function Hero() {
 				</div>
 
 				<div className="absolute inset-x-0 top-0 flex w-full justify-center gap-2 mt-2">
-					{isClosed && <Menu />}
+					{/* {isClosed && <Menu />} */}
 					{/* 
 						<input
 						type="text"
