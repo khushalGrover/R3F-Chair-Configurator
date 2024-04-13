@@ -41,7 +41,7 @@ export function Chairs_2(props) {
 			<mesh
 				geometry={nodes.mdr_Arm.geometry}
 				material={materials.chair}
-				visible={partToMeshMapping['A'] === 2  && partToMeshMapping['A'] !== 0}
+				visible={partToMeshMapping['B'] === 3  && partToMeshMapping['B'] !== 0}
 			/>
 			<mesh
 				geometry={nodes.mdr_Back.geometry}

@@ -5,8 +5,8 @@ const ChairConfigurator = ({ chairCode }) => {
 	
 	// Define the 2D array representing the configurations
 	const configurations = [
-		["None", "Classic", "Modern"], // Arms
-		["None", "Classic", "Modern"], // Back
+		["None", "Classic"], // Arms
+		["None", "Classic", "Modern", "Modern2"], // Back
 		["None", "Classic", "Modern"], // Cushion
 		["None", "Classic", "Modern"], // Legs
 		["None", "Classic", "Modern"], // Seat

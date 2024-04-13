@@ -22,4 +22,11 @@ After cloning from [https://github.com/khushalGrover/R3F-Chair-Configurator], fo
 
 ```bash
 yarn
+npm install gh-pages --save-dev
 yarn dev
+```
+
+## Deploy
+```bash
+yarn build
+yarn deploy -- -m "Deploy React app to GitHub Pages"

@@ -149,12 +149,13 @@ const Configurator = () => {
 			
 			{/* <Spinner type="text" items={["none","classic", "modern" ]} /> */}
 
+			{/* ARM */}
 			<div className="configurator__section">
 				<div className="configurator__section__title">Arm</div>
 				<Spinner
 					targetIndex={0}
 					type="text"
-					items={["none", "classic", "modern"]}
+					items={["none", "classic"]}
 					objectCode={objectCode}
 					setObjectCode={setObjectCode}
 				/>
@@ -166,7 +167,7 @@ const Configurator = () => {
 				<Spinner
 					targetIndex={1}
 					type="text"
-					items={["none", "classic", "modern"]}
+					items={["none", "classic", "modern", "modern 2"]}
 					objectCode={objectCode}
 					setObjectCode={setObjectCode}
 				/>
