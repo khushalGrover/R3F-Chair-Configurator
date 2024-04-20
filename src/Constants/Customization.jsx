@@ -92,7 +92,7 @@ export const CustomizationProvider = (props) => {
     S:parseInt(objectCode.charAt(4)), // SEAT
   }
  
-  // console.log(partToMeshMapping, "!!! partToMeshMapping");
+  console.log(partToMeshMapping, "!!! partToMeshMapping");
   return (
     <CustomizationContext.Provider
       value={{
