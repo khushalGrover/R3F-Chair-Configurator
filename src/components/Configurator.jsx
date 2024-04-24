@@ -167,7 +167,7 @@ const Configurator = () => {
 				<Spinner
 					targetIndex={1}
 					type="text"
-					items={["none", "classic", "modern", "modern 2"]}
+					items={["none", "classic", "modern", "modern 2", "test1", "test2" ,"test4"]}
 					objectCode={objectCode}
 					setObjectCode={setObjectCode}
 				/>

@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Button from "./Button"; // Import your custom Button component
 import { Canvas } from "@react-three/fiber";
+import { Loader } from "@react-three/drei";
 import { Experience } from "./Experience";
 import Configurator from "./Configurator";
 import { CustomizationProvider } from "../Constants/Customization";
@@ -15,21 +16,18 @@ export function Hero() {
 	const [CValue, setCValue] = useState("");
 
 	const handleSetCode = () => {
-		
-		if(CValue.length === 5) {
+		if (CValue.length === 5) {
 			console.log("# # # # # final value is", CValue);
-		}
-		else {
+		} else {
 			console.log("Invalid code");
 		}
-		
 	};
 	const handleChange = (e) => {
 		const value = e.target.value;
 		// Validate input to allow numbers only
 		if (/^\d*$/.test(value) && value.length <= 5) {
 			setCValue(value);
-		} 
+		}
 	};
 	const handleToggleClick = () => {
 		setIsClosed(!isClosed);
@@ -55,6 +53,7 @@ export function Hero() {
 							<fog attach="fog" args={["#191920", 0, 15]} />
 							<Experience arg={arg} />
 						</Canvas>
+						<Loader />
 						{/* {isClosed && <Configurator/>} */}
 						{isClosed && <Configurator />}
 					</CustomizationProvider>
@@ -90,9 +89,8 @@ export function Hero() {
 						#12445
 					</h1>
 					*/}
-
 				</div>
-				
+
 				{/* {console.log(CValue)} */}
 				{isClosed ? null : (
 					<div className="grid gap-4 px-6 text-slate-400">
