@@ -69,28 +69,6 @@ export function Hero() {
 					</div>
 				</div>
 
-				<div className="absolute inset-x-0 top-0 flex w-full justify-center gap-2 mt-2">
-					{/* {isClosed && <Menu />} */}
-					{/* 
-						<input
-						type="text"
-						value={CValue}
-						onChange={handleChange}
-						placeholder="Enter Code(numbers only)"
-					/>
-					<Button
-						size="lg"
-						variant="other"
-						onClick={handleSetCode}
-					>
-						Set Code
-					</Button> 
-					<h1 className="text-white">
-						#12445
-					</h1>
-					*/}
-				</div>
-
 				{/* {console.log(CValue)} */}
 				{isClosed ? null : (
 					<div className="grid gap-4 px-6 text-slate-400">
