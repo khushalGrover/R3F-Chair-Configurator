@@ -6,6 +6,7 @@ import {
 	useTexture,
 	Html,
 } from "@react-three/drei";
+import { Chairs_2 } from "./Chairs_2";
 
 export const Experience = ({ arg }) => {
 	// const props = useTexture({
@@ -22,42 +23,37 @@ export const Experience = ({ arg }) => {
 	});
 	return (
 		<>
-			<PresentationControls
-				speed={1.5}
-				global={false}
-				zoom={1}
-				polar={[0, 0]}
-				azimuth={[-Math.PI / 8, Math.PI / 8]}
-			>
-				<Stage environment="city" intensity={0.5} contactShadow={false}>
-					{/* <OrbitControls
+			{/* <PresentationControls speed={1.5} global={false} zoom={0.8} polar={[0, Math.PI / 4]}> */}
+			<Stage environment="city" intensity={0.5} contactShadow={false}>
+				<OrbitControls
 					makeDefault
 					minPolarAngle={0}
 					maxPolarAngle={Math.PI / 2}
 					minDistance={1}
 					maxDistance={2}
-				/> */}
-					{/* <ambientLight intensity={0.5} /> */}
-					<mesh>
+				/>
+				{/* <ambientLight intensity={0.5} /> */}
+				{/* <mesh >
 						<boxGeometry />
 						<meshStandardMaterial {...props} />
-					</mesh>
-
-					<mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]}>
-						<planeGeometry args={[100, 100]} />
-						<MeshReflectorMaterial
-							blur={[400, 400]}
-							resolution={1024}
-							mixBlur={1}
-							mixStrength={40}
-							reoughness={1}
-							depthScale={1.2}
-							minDepthThreshold={0.4}
-							maxDepthThreshold={1.4}
-							color="#101010"
-							matalness={0.5}
-						/>
-						{/* <Html
+					</mesh> */}
+				<Chairs_2 />
+			</Stage>
+			<mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.4, 0]}>
+				<planeGeometry args={[100, 100]} />
+				<MeshReflectorMaterial
+					blur={[400, 400]}
+					resolution={1024}
+					mixBlur={1}
+					mixStrength={40}
+					reoughness={1}
+					depthScale={1.2}
+					minDepthThreshold={0.4}
+					maxDepthThreshold={1.4}
+					color="#101010"
+					matalness={0.5}
+				/>
+				<Html
 					scale={0.2}
 					rotation={[Math.PI /2, Math.PI / 2, 0]}
 					position={[0,0,1]}
@@ -67,10 +63,10 @@ export const Experience = ({ arg }) => {
 					<div className="annotation">
 						Chair #1
 					</div>
-				</Html> */}
-					</mesh>
-				</Stage>
-			</PresentationControls>
+				</Html>
+			</mesh>
+
+			{/* </PresentationControls> */}
 		</>
 	);
 };
