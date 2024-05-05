@@ -1,4 +1,4 @@
-# R3F-Chair-Configurator
+# R3F-Small-Configurator
 
 This project is a practice repository for customization in R3F (React Three Fiber). This projects using a boilerplate called r3f-vite-starter. The repository can be found at [https://github.com/khushalGrover/r3f-vite-starter](https://github.com/khushalGrover/r3f-vite-starter).
 
