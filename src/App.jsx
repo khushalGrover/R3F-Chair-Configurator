@@ -15,7 +15,7 @@ function App() {
 						className="canvas"
 					>
 						<color attach="background" args={["#191920"]} />
-						<fog attach="fog" args={["#191920", 0, 15]} />
+						<fog attach="fog" args={["#191920", 0, 30]} />
 						<Experience />
 					</Canvas>
 					<Loader />
