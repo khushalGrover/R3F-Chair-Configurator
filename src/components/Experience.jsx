@@ -31,13 +31,13 @@ export const Experience = ({ arg }) => {
 					maxDistance={2}
 				/> */}
 					{/* <ambientLight intensity={0.5} /> */}
-					<mesh scale={0.5}>
+					<mesh scale={1}>
 						<boxGeometry />
 						<meshStandardMaterial {...props} />
 					</mesh>
 				</PresentationControls>
 			</Stage>
-			<mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.251, 0]}>
+			{/* <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.5, 0]}>
 				<planeGeometry args={[100, 100]} />
 				<MeshReflectorMaterial
 					blur={[400, 400]}
@@ -50,7 +50,7 @@ export const Experience = ({ arg }) => {
 					maxDepthThreshold={1.4}
 					color="#101010"
 					matalness={0.5}
-				/>
+				/> */}
 				{/* <Html
 					scale={0.2}
 					rotation={[Math.PI /2, Math.PI / 2, 0]}
@@ -62,7 +62,7 @@ export const Experience = ({ arg }) => {
 						Chair #1
 					</div>
 				</Html> */}
-			</mesh>
+			{/* </mesh> */}
 		</>
 	);
 };
